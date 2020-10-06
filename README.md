@@ -1,37 +1,4 @@
-## Welcome to GitHub Pages
-
-You can use the [editor on GitHub](https://github.com/rchadha96/stanford-open-policing-nashville/edit/main/README.md) to maintain and preview the content for your website in Markdown files.
-
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
-
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/rchadha96/stanford-open-policing-nashville/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+Title: Analysis of the Metropolitan Nashville Police Department’s Traffic Stop Practices using R
+•	Analysed over 3 million traffic stops with 42 features under the supervision of Dr. Niamh Cahill to determine if Racial Profiling exists. Utilized statistical techniques to conclude that African Americans were arrested and searched 16.3% higher compared to other drivers.
+•	Implemented and explored Machine Learning Regression Models such as Logistic Regression, General Additive Model and Bayesian Hierarchal Model to identify key attributes and investigate comparative results in order to refine best performing model. 
+•	Achieved an accuracy of 95% using Bayesian Hierarchical model, successfully predicting search and arrest trends depending on drivers’ race.  
