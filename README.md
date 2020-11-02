@@ -20,3 +20,4 @@ Raghav Chadha, MSc Data Science and Analytics candidate
 + [report/](https://github.com/rchadha96/stanford-open-policing-nashville/blob/main/Report%20on%20Racial%20Profiling%20by%20Metro%20Nashville%20Police%20Department_FINAL.pdf) - main thesis report, supplementary material and research data management plan
 + [images/](https://github.com/rchadha96/stanford-open-policing-nashville/tree/main/images) - various .png files representing the visualisation and modeling results
 + [data/](https://github.com/rchadha96/stanford-open-policing-nashville/blob/main/data/README.md) - CSV file used for the project
++ [presentation/](https://github.com/rchadha96/stanford-open-policing-nashville/tree/main/presentation) - The presentation was an opportunity to share my work with fellow students and get valuable feedback from staff members and students.
