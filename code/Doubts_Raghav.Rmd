@@ -1,0 +1,76 @@
+---
+title: "Doubts- Raghav"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r message=FALSE, warning=FALSE}
+library(tidyverse)
+library(ggplot2)
+library(gam)
+library(splines)
+```
+
+```{r}
+# GAM as done in ML
+# Option 1:
+fit_gam <- lm(dis ~ ns(medv,4)+ ns(age,4) + ns(nox,4), data=bn_train)
+summary(fit_gam)
+plot.Gam(fit_gam, se=TRUE,col = "red")
+
+# Option 2:
+fc.gam <- gam(wage250 ~ year + s(age,df = 5)+ education,
+family="binomial", data=Wage)
+plot(fc.gam, se = T, col = "green")
+```
+
+```{r}
+# Reading the UK Policing Data for Nashville, Tennesse:
+nv <- read_csv("tn_nashville_2019_12_17.csv")
+```
+
+```{r}
+# Spatial Analysis
+
+loc <- nv %>%
+  group_by(precinct, lat, lng) %>%
+  summarise(stops = n()) %>%
+  arrange(desc(stops)) %>%
+  head(n = 10000)
+
+loc <- na.omit(loc)
+
+loc <- loc %>%
+  mutate(mytext = paste("Stops:", stops , "\n", 
+                        "Precinct:", precinct, sep = "")) # for plotly
+
+library(usmap) # Library for US
+
+us <- map_data("state") %>%
+  filter(region == "tennessee")
+
+# Plot 1:
+ggplot() +
+geom_path(data = us, aes(x = long, y = lat)) +
+geom_point(data = loc, aes(x = lng, y = lat, size = stops), color = "red")
+
+# Plot 2:
+p <- loc %>%
+  ggplot() +
+  geom_polygon(data = us, aes(x=long, y = lat, group = group), fill="grey", alpha=0.3) +
+  geom_point(data=loc, aes(x=lng, y=lat, size=stops, color=stops, text = mytext)) +
+  scale_size_continuous(range=c(1,10)) +
+  scale_color_viridis(trans="log") +
+  theme_bw() + 
+  ylim(34,37) + 
+  xlim(-90,-82) +
+  coord_map() + 
+  theme(legend.position = "none")
+
+ggplotly(p, tooltip = "text")
+
+
+```
