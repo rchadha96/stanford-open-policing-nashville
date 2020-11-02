@@ -1,28 +1,28 @@
 ## Comparison of Nashville with its neighbouring cities
 ![nashville_neighbours](/presentation/images/nashville_neighbours.png)
 
-![neighbours_byrace](/images/neighbours_byrace.png)
+![neighbours_byrace](/presentation/images/neighbours_byrace.png)
 
 ## Analysis of Traffic Stops
 
-![stopped_byrace](/images/stopped_byrace.png)
+![stopped_byrace](/presentation/images/stopped_byrace.png)
 
-![stopped_byTime](/images/stopped_byTime.png)
+![stopped_byTime](/presentation/images/stopped_byTime.png)
 
-![stopped_time_race](/images/stopped_time_race.png)
+![stopped_time_race](/presentation/images/stopped_time_race.png)
 
 ## Analysis of Arrests from Traffic Stops
 
-![arrest_byrace](/images/arrest_byrace.png)
+![arrest_byrace](/presentation/images/arrest_byrace.png)
 
-![arrests_byrace_year](/images/arrests_byrace_year.png)
+![arrests_byrace_year](/presentation/images/arrests_byrace_year.png)
 
-![arrests_race_sex](/images/arrests_race_sex.png)
+![arrests_race_sex](/presentation/images/arrests_race_sex.png)
 
 ## Analysis of Top Violations 
 
-![violations_age](/images/violations_age.png)
+![violations_age](/presentation/images/violations_age.png)
 
-![violations_bygender](/images/violations_bygender.png)
+![violations_bygender](/presentation/images/violations_bygender.png)
 
-![violations_byrace](/images/violations_byrace.png)
+![violations_byrace](/presentation/images/violations_byrace.png)
