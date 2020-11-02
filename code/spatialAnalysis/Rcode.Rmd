@@ -1,0 +1,75 @@
+---
+title: "Spatial Analysis"
+author: "Raghav Chadha"
+date: "04/06/2020"
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, fig.width = 10, fig.height = 6)
+```
+
+```{r message=FALSE, warning=FALSE}
+library(tidyverse)
+library(ggplot2)
+library(plotly)
+library(lubridate)
+library(viridis)
+library(RColorBrewer)
+library(leaflet)
+library(usmap)
+tn_nv <- read_csv("tn_nashville_2020_04_01.csv")
+```
+
+## Using Leaflet
+
+```{r}
+df4 <- tn_nv
+df4 <-na.omit(df4)
+ df4$popup <- paste( "<br>", "<b>Race: </b>", df4$subject_race,
+                     "<br>", "<b>Zone: </b>", df4$zone,
+                     "<br>", "<b>Precinct: </b>", df4$precinct)
+
+ 
+ leaflet(df4) %>%
+        addProviderTiles(providers$Stamen.TonerLite, options = providerTileOptions(noWrap = TRUE)) %>%
+        addMarkers(clusterOptions = markerClusterOptions(), data = df4, lat = ~ lat, lng = ~ lng, popup = ~popup, label = ~as.character(paste0(subject_race , " ")))
+```
+
+## Static Maps
+
+```{r}
+
+states <- map_data("state")
+
+
+map1 <- ggplot() + 
+            geom_polygon(data=states, aes(x=long, y=lat,group=group), color="black",fill=NA) + 
+            geom_point(data=tn_nv, aes(x=lng, y=lat,color=subject_race), size=1) +
+            scale_color_viridis_d() + 
+            ggtitle("Stops by Subject Race") +
+            ylab("Latitude") +
+            xlab("Longitude") + 
+            theme(plot.title = element_text(size=12))
+
+map1
+```
+
+```{r}
+states1 <- map_data("state") %>%
+  filter(region == "tennessee")
+
+map2 <- ggplot() + 
+            geom_polygon(data=states1, aes(x=long, y=lat,group=group), color="black",fill=NA) + 
+            geom_point(data=tn_nv, aes(x=lng, y=lat,color=subject_race), size=1) +
+            scale_color_viridis_d() + 
+            ggtitle("Stops by Subject Race") +
+            ylab("Latitude") +
+            xlab("Longitude") + 
+            theme(plot.title = element_text(size=12))
+
+map2
+
+```
