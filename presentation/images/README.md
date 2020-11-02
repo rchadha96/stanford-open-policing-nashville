@@ -1,5 +1,5 @@
 ## Comparison of Nashville with its neighbouring cities
-![nashville_neighbours](/images/nashville_neighbours.png)
+![nashville_neighbours](/presentation/images/nashville_neighbours.png)
 
 ![neighbours_byrace](/images/neighbours_byrace.png)
 
